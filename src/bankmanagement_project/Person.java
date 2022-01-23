@@ -25,33 +25,27 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
-    public boolean isSame (Person man){
-        if (man.getNif().equalsIgnoreCase(this.nif)) {
+
+    public boolean isSame(Person person) {
+        if (person.getNif().equalsIgnoreCase(this.nif)) {
             return true;
         } else {
-        return false;
+            return false;
         }
     }
-    
-    public boolean isSame (String idNumber) {
+
+    public boolean isSame(String idNumber) {
         if (idNumber.equalsIgnoreCase(this.nif)) {
             return true;
         } else {
-        return false;
+            return false;
         }
-    } 
-    
-    
-    @Override
-    
-    public String toString() {
-    String exit = this.name + "(" + ")" + this.nif;
-    return exit;
     }
-    
- 
 
+    @Override
+    public String toString() {
+        String exit = this.name + "(" + ")" + this.nif;
+        return exit;
+    }
 
 }

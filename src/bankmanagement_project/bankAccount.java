@@ -1,6 +1,8 @@
 package bankmanagement_project;
 
+import java.text.NumberFormat;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -10,6 +12,7 @@ public class bankAccount {
 
     private long numAccount;
     private Person accountHolder;
+    private double balance = 0;
     private Set<Person> authorized = new HashSet<>();
 
     public bankAccount(long numAccount, Person accountHolder) {
@@ -37,7 +40,29 @@ public class bankAccount {
         return authorized.add(whoIsAuthorized);
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
     public String seeAuthorized() {
         return authorized.toString();
     }
+
+    public String getFormattedBalance() {
+        NumberFormat formatImport = NumberFormat.getCurrencyInstance(new Locale("es", "ES"));
+        return formatImport.format(balance);
+    }
+
+    public int depositMoney(double amount) {
+        if (amount > 0 && amount < 3000) {
+            balance += amount;
+            return 0;
+        } else if (amount >= 3000) {
+            balance += amount;
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
 }
