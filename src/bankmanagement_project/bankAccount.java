@@ -65,4 +65,20 @@ public class bankAccount {
         }
     }
 
+    public double takeMoney(double amount) {
+        if (amount > 0) {
+            if (this.balance - amount <= -50) {
+                return -1;
+            }
+            if (this.balance - amount > 0 && this.balance > -50) {
+                this.balance -= amount;
+                return 0;
+            }
+            this.balance -= amount;
+            return 1;
+        } else {
+            return -2;
+        }
+    }
+
 }
