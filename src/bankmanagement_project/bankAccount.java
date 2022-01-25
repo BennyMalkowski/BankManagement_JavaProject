@@ -81,4 +81,20 @@ public class bankAccount {
         }
     }
 
+    public String accountInfo() {
+        String accountHolderInfo = "Account Number: " + this.getNumAccount() + " - Holder: " + this.accountHolder + " \n";
+        String authorizedListInfo = "Authorized persons: " + authorized.toString() + "\n";
+        String balance = "Balance: " + getBalance();
+        String info;
+
+        if (authorized.toString().length() > 0) {
+            info = accountHolderInfo + authorizedListInfo;
+            return info;
+        } else {
+            info = accountHolderInfo + balance;
+            return info;
+        }
+
+    }
+
 }

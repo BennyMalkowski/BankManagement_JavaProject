@@ -32,6 +32,9 @@ public class BankManagement_Project {
                 case "2":
                     menuTakeMoney(account);
                     break;
+                      case "3":
+                          System.out.println(account.accountInfo());
+                    break;
                 default:
                     System.out.println("You must select a correct number");
             }
@@ -43,7 +46,8 @@ public class BankManagement_Project {
         System.out.println("BANK ACCOUNT MANAGEMENT");
         
         System.out.println("1-Deposit money.");
-        System.out.println("2-Withdraw money.\n");  
+        System.out.println("2-Withdraw money."); 
+        System.out.println("3-Info Account. \n");
         System.out.println("0-Exit.");
         answer = sc.nextLine();
         return answer;
